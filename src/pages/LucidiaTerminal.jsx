@@ -383,7 +383,7 @@ export default function LucidiaTerminal() {
         }
       `}</style>
 
-      <div style={{ width: "100vw", height: "100vh", background: "#0d0d0d", display: "flex", flexDirection: "column", overflow: "hidden", fontFamily: mono }}>
+      <div style={{ width: "100vw", height: "100vh", background: "#000", display: "flex", flexDirection: "column", overflow: "hidden", fontFamily: mono }}>
 
         {/* ── macOS-style title bar ─────────────────────────────── */}
       <div style={{ minHeight: 2, background: GRAD, backgroundSize: "200% 100%", animation: "gradShift 4s linear infinite", flexShrink: 0 }} />

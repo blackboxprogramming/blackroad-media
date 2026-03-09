@@ -10,14 +10,14 @@ const COLORS = [
 ];
 
 const GRAYS = [
-  { hex: "#0a0a1a", name: "Void",    label: "950" },
-  { hex: "#10102a", name: "Abyss",   label: "900" },
-  { hex: "#16163a", name: "Deep",    label: "800" },
-  { hex: "#252545", name: "Dusk",    label: "700" },
-  { hex: "#40406a", name: "Mid",     label: "500" },
-  { hex: "#7070a0", name: "Mist",    label: "400" },
-  { hex: "#a8a8c8", name: "Haze",    label: "300" },
-  { hex: "#e8e8f0", name: "Frost",   label: "100" },
+  { hex: "#000000", name: "Void",    label: "950" },
+  { hex: "#0a0a0a", name: "Abyss",   label: "900" },
+  { hex: "#111111", name: "Deep",    label: "800" },
+  { hex: "#222222", name: "Dusk",    label: "700" },
+  { hex: "#444444", name: "Mid",     label: "500" },
+  { hex: "#666666", name: "Mist",    label: "400" },
+  { hex: "#888888", name: "Haze",    label: "300" },
+  { hex: "#f0f0f0", name: "Frost",   label: "100" },
 ];
 
 const TYPE_SAMPLES = [
@@ -47,8 +47,8 @@ function SectionTab({ id, label, active, onClick }) {
       onClick={() => onClick(id)}
       style={{
         background: active ? "rgba(136,68,255,0.15)" : "transparent",
-        border: active ? "1px solid rgba(136,68,255,0.4)" : "1px solid rgba(100,140,255,0.08)",
-        color: active ? "#e8e8f0" : "#7070a0",
+        border: active ? "1px solid rgba(136,68,255,0.4)" : "1px solid #1a1a1a",
+        color: active ? "#f0f0f0" : "#888888",
         fontFamily: "'Inter', sans-serif",
         fontWeight: 600,
         fontSize: 12,
@@ -94,14 +94,14 @@ function ColorChip({ color, mono = false }) {
       onMouseEnter={e => e.currentTarget.style.transform = "translateY(-3px)"}
       onMouseLeave={e => e.currentTarget.style.transform = "translateY(0)"}
     >
-      <div style={{ fontFamily: "'Inter', sans-serif", fontWeight: 700, fontSize: 13, color: isLight ? "#0a0a1a" : "#e8e8f0" }}>
+      <div style={{ fontFamily: "'Inter', sans-serif", fontWeight: 700, fontSize: 13, color: isLight ? "#0a0a0a" : "#f0f0f0" }}>
         {color.name}
       </div>
-      <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 11, color: isLight ? "#25254580" : "#e8e8f080" }}>
+      <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 11, color: isLight ? "#22222280" : "#f0f0f080" }}>
         {color.hex.toUpperCase()}
       </div>
       {color.token && (
-        <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 10, color: isLight ? "#25254560" : "#e8e8f060", marginTop: 2 }}>
+        <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 10, color: isLight ? "#22222260" : "#f0f0f060", marginTop: 2 }}>
           {color.token}
         </div>
       )}
@@ -109,7 +109,7 @@ function ColorChip({ color, mono = false }) {
         <div style={{
           position: "absolute", inset: 0, display: "flex", alignItems: "center", justifyContent: "center",
           background: color.hex + "ee", fontFamily: "'JetBrains Mono', monospace", fontSize: 12, fontWeight: 600,
-          color: isLight ? "#0a0a1a" : "#e8e8f0",
+          color: isLight ? "#0a0a0a" : "#f0f0f0",
         }}>
           COPIED
         </div>
@@ -123,8 +123,8 @@ function PaletteSection() {
     <div style={{ display: "flex", flexDirection: "column", gap: 48 }}>
       <div>
         <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 20 }}>
-          <span style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 700, fontSize: 18, color: "#e8e8f0" }}>Accent Spectrum</span>
-          <div style={{ flex: 1, height: 1, background: "rgba(100,140,255,0.08)" }} />
+          <span style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 700, fontSize: 18, color: "#f0f0f0" }}>Accent Spectrum</span>
+          <div style={{ flex: 1, height: 1, background: "#1a1a1a" }} />
         </div>
         <div style={{ display: "flex", gap: 3, flexWrap: "wrap" }}>
           {COLORS.map(c => <ColorChip key={c.hex} color={c} />)}
@@ -134,8 +134,8 @@ function PaletteSection() {
 
       <div>
         <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 20 }}>
-          <span style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 700, fontSize: 18, color: "#e8e8f0" }}>Surface Scale</span>
-          <div style={{ flex: 1, height: 1, background: "rgba(100,140,255,0.08)" }} />
+          <span style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 700, fontSize: 18, color: "#f0f0f0" }}>Surface Scale</span>
+          <div style={{ flex: 1, height: 1, background: "#1a1a1a" }} />
         </div>
         <div style={{ display: "flex", gap: 3, flexWrap: "wrap" }}>
           {GRAYS.map(c => (
@@ -146,8 +146,8 @@ function PaletteSection() {
 
       <div>
         <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 20 }}>
-          <span style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 700, fontSize: 18, color: "#e8e8f0" }}>Gradient Stops</span>
-          <div style={{ flex: 1, height: 1, background: "rgba(100,140,255,0.08)" }} />
+          <span style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 700, fontSize: 18, color: "#f0f0f0" }}>Gradient Stops</span>
+          <div style={{ flex: 1, height: 1, background: "#1a1a1a" }} />
         </div>
         <div style={{ display: "flex", gap: 0 }}>
           {COLORS.map((c, i) => (
@@ -157,7 +157,7 @@ function PaletteSection() {
               height: 64,
               display: "flex", alignItems: "flex-end", padding: "8px 10px",
             }}>
-              <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 10, color: "#e8e8f0cc", fontWeight: 500 }}>
+              <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 10, color: "#f0f0f0cc", fontWeight: 500 }}>
                 {c.stop}%
               </span>
             </div>
@@ -173,36 +173,36 @@ function TypeSection() {
     <div style={{ display: "flex", flexDirection: "column", gap: 4 }}>
       {TYPE_SAMPLES.map((s, i) => (
         <div key={i} style={{
-          background: "#10102a",
-          border: "1px solid rgba(100,140,255,0.08)",
+          background: "#111111",
+          border: "1px solid #1a1a1a",
           padding: "28px 32px",
           display: "flex",
           alignItems: "center",
           gap: 32,
         }}>
           <div style={{ minWidth: 72 }}>
-            <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 10, color: "#40406a", textTransform: "uppercase", letterSpacing: "0.1em" }}>
+            <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 10, color: "#444444", textTransform: "uppercase", letterSpacing: "0.1em" }}>
               {s.label}
             </div>
-            <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 10, color: "#40406a", marginTop: 4 }}>
+            <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 10, color: "#444444", marginTop: 4 }}>
               {s.size}px / {s.weight}
             </div>
           </div>
-          <div style={{ flex: 1, height: 1, background: "rgba(100,140,255,0.06)" }} />
-          <div style={{ flex: 4, fontFamily: s.font, fontWeight: s.weight, fontSize: s.size, color: "#e8e8f0", lineHeight: 1.3 }}>
+          <div style={{ flex: 1, height: 1, background: "#141414" }} />
+          <div style={{ flex: 4, fontFamily: s.font, fontWeight: s.weight, fontSize: s.size, color: "#f0f0f0", lineHeight: 1.3 }}>
             {s.text}
           </div>
         </div>
       ))}
 
-      <div style={{ marginTop: 32, padding: "24px 32px", background: "#10102a", border: "1px solid rgba(100,140,255,0.08)" }}>
-        <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 11, color: "#40406a", letterSpacing: "0.08em", marginBottom: 16 }}>
+      <div style={{ marginTop: 32, padding: "24px 32px", background: "#111111", border: "1px solid #1a1a1a" }}>
+        <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 11, color: "#444444", letterSpacing: "0.08em", marginBottom: 16 }}>
           FONT IMPORT · GOOGLE FONTS
         </div>
         <pre style={{
-          fontFamily: "'JetBrains Mono', monospace", fontSize: 12, color: "#7070a0", margin: 0,
-          background: "#08081a", padding: 20, overflowX: "auto", lineHeight: 1.7,
-          border: "1px solid rgba(100,140,255,0.06)",
+          fontFamily: "'JetBrains Mono', monospace", fontSize: 12, color: "#888888", margin: 0,
+          background: "#080808", padding: 20, overflowX: "auto", lineHeight: 1.7,
+          border: "1px solid #141414",
         }}>
 {`@import url('https://fonts.googleapis.com/css2?
   family=Space+Grotesk:wght@600;700&
@@ -218,19 +218,19 @@ function TypeSection() {
 function TokenSection() {
   const tokens = [
     { group: "Background",  rows: [
-      ["--bg-base",   "#0a0a1a", "Root surface"],
-      ["--bg-card",   "#10102a", "Card/panel surface"],
-      ["--bg-code",   "#08081a", "Code block surface"],
-      ["--bg-hover",  "#16163a", "Hover state"],
+      ["--bg-base",   "#0a0a0a", "Root surface"],
+      ["--bg-card",   "#111111", "Card/panel surface"],
+      ["--bg-code",   "#080808", "Code block surface"],
+      ["--bg-hover",  "#161616", "Hover state"],
     ]},
     { group: "Text",  rows: [
-      ["--text-primary",   "#e8e8f0", "Primary content"],
-      ["--text-secondary", "#a8a8c8", "Supporting content"],
-      ["--text-muted",     "#7070a0", "Labels / meta"],
-      ["--text-disabled",  "#40406a", "Disabled states"],
+      ["--text-primary",   "#f0f0f0", "Primary content"],
+      ["--text-secondary", "#aaaaaa", "Supporting content"],
+      ["--text-muted",     "#888888", "Labels / meta"],
+      ["--text-disabled",  "#444444", "Disabled states"],
     ]},
     { group: "Border", rows: [
-      ["--border-default", "rgba(100,140,255,0.08)", "Default border"],
+      ["--border-default", "#1a1a1a", "Default border"],
       ["--border-active",  "rgba(255,100,40,0.2)",   "Active/focused border"],
       ["--border-glow",    "rgba(136,68,255,0.4)",   "Glow border"],
     ]},
@@ -241,24 +241,24 @@ function TokenSection() {
     <div style={{ display: "flex", flexDirection: "column", gap: 32 }}>
       {tokens.map(g => (
         <div key={g.group}>
-          <div style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 700, fontSize: 14, color: "#e8e8f0", letterSpacing: "0.06em", textTransform: "uppercase", marginBottom: 12 }}>
+          <div style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 700, fontSize: 14, color: "#f0f0f0", letterSpacing: "0.06em", textTransform: "uppercase", marginBottom: 12 }}>
             {g.group}
           </div>
-          <div style={{ border: "1px solid rgba(100,140,255,0.08)" }}>
+          <div style={{ border: "1px solid #1a1a1a" }}>
             {g.rows.map(([token, value, desc], i) => (
               <div key={token} style={{
                 display: "grid", gridTemplateColumns: "200px 1fr 1fr",
                 alignItems: "center",
                 padding: "12px 20px",
-                borderBottom: i < g.rows.length - 1 ? "1px solid rgba(100,140,255,0.06)" : "none",
-                background: i % 2 === 0 ? "#10102a" : "#0a0a1a",
+                borderBottom: i < g.rows.length - 1 ? "1px solid #141414" : "none",
+                background: i % 2 === 0 ? "#111111" : "#0a0a0a",
               }}>
                 <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 12, color: "#4488FF" }}>{token}</span>
                 <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
                   <div style={{ width: 18, height: 18, background: value, border: "1px solid rgba(255,255,255,0.1)" }} />
-                  <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 12, color: "#7070a0" }}>{value}</span>
+                  <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 12, color: "#888888" }}>{value}</span>
                 </div>
-                <span style={{ fontFamily: "'Inter', sans-serif", fontSize: 13, color: "#40406a" }}>{desc}</span>
+                <span style={{ fontFamily: "'Inter', sans-serif", fontSize: 13, color: "#444444" }}>{desc}</span>
               </div>
             ))}
           </div>
@@ -281,18 +281,18 @@ function ComponentSection() {
     { name: "Sentinel", role: "Security & Compliance",  color: "#4488FF", status: "active" },
   ];
 
-  const statusColor = { active: "#00D4FF", idle: "#40406a", alert: "#FF2255" };
+  const statusColor = { active: "#00D4FF", idle: "#444444", alert: "#FF2255" };
 
   return (
     <div style={{ display: "flex", flexDirection: "column", gap: 40 }}>
       {/* Buttons */}
       <div>
-        <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 11, color: "#40406a", letterSpacing: "0.1em", marginBottom: 16 }}>BUTTONS</div>
+        <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 11, color: "#444444", letterSpacing: "0.1em", marginBottom: 16 }}>BUTTONS</div>
         <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
           {["Primary", "Ghost", "Danger", "Arc"].map((label, i) => {
             const styles = [
-              { background: "#e8e8f0", color: "#0a0a1a", border: "1px solid transparent" },
-              { background: "transparent", color: "#a8a8c8", border: "1px solid rgba(100,140,255,0.2)" },
+              { background: "#f0f0f0", color: "#0a0a0a", border: "1px solid transparent" },
+              { background: "transparent", color: "#aaaaaa", border: "1px solid #333" },
               { background: "rgba(255,34,85,0.12)", color: "#FF2255", border: "1px solid rgba(255,34,85,0.3)", boxShadow: "0 0 12px rgba(255,34,85,0.15)" },
               { background: "rgba(0,212,255,0.1)", color: "#00D4FF", border: "1px solid rgba(0,212,255,0.3)", boxShadow: "0 0 12px rgba(0,212,255,0.2)" },
             ];
@@ -310,20 +310,20 @@ function ComponentSection() {
 
       {/* Toggle */}
       <div>
-        <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 11, color: "#40406a", letterSpacing: "0.1em", marginBottom: 16 }}>TOGGLE</div>
+        <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 11, color: "#444444", letterSpacing: "0.1em", marginBottom: 16 }}>TOGGLE</div>
         <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
           <div onClick={() => setToggled(!toggled)} style={{
-            width: 48, height: 26, background: toggled ? "rgba(136,68,255,0.3)" : "#10102a",
-            border: toggled ? "1px solid rgba(136,68,255,0.6)" : "1px solid rgba(100,140,255,0.15)",
+            width: 48, height: 26, background: toggled ? "rgba(136,68,255,0.3)" : "#111111",
+            border: toggled ? "1px solid rgba(136,68,255,0.6)" : "1px solid #222",
             position: "relative", cursor: "pointer", transition: "all 0.2s",
             ...(toggled ? { boxShadow: "0 0 14px rgba(136,68,255,0.35)" } : {}),
           }}>
             <div style={{
               position: "absolute", top: 3, left: toggled ? 24 : 3, width: 18, height: 18,
-              background: toggled ? "#8844FF" : "#40406a", transition: "all 0.2s",
+              background: toggled ? "#8844FF" : "#444444", transition: "all 0.2s",
             }} />
           </div>
-          <span style={{ fontFamily: "'Inter', sans-serif", fontSize: 14, color: toggled ? "#e8e8f0" : "#7070a0" }}>
+          <span style={{ fontFamily: "'Inter', sans-serif", fontSize: 14, color: toggled ? "#f0f0f0" : "#888888" }}>
             {toggled ? "Enabled" : "Disabled"}
           </span>
         </div>
@@ -331,26 +331,26 @@ function ComponentSection() {
 
       {/* Input */}
       <div>
-        <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 11, color: "#40406a", letterSpacing: "0.1em", marginBottom: 16 }}>INPUT</div>
+        <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 11, color: "#444444", letterSpacing: "0.1em", marginBottom: 16 }}>INPUT</div>
         <input
           defaultValue="Z := yx − w"
           style={{
-            background: "#08081a", border: "1px solid rgba(100,140,255,0.15)",
-            color: "#e8e8f0", fontFamily: "'JetBrains Mono', monospace", fontSize: 14,
+            background: "#080808", border: "1px solid #222",
+            color: "#f0f0f0", fontFamily: "'JetBrains Mono', monospace", fontSize: 14,
             padding: "12px 18px", width: 320, outline: "none",
           }}
           onFocus={e => { e.target.style.borderColor = "rgba(136,68,255,0.5)"; e.target.style.boxShadow = "0 0 16px rgba(136,68,255,0.15)"; }}
-          onBlur={e => { e.target.style.borderColor = "rgba(100,140,255,0.15)"; e.target.style.boxShadow = "none"; }}
+          onBlur={e => { e.target.style.borderColor = "#222"; e.target.style.boxShadow = "none"; }}
         />
       </div>
 
       {/* Agent Grid */}
       <div>
-        <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 11, color: "#40406a", letterSpacing: "0.1em", marginBottom: 16 }}>AGENT CARDS</div>
+        <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 11, color: "#444444", letterSpacing: "0.1em", marginBottom: 16 }}>AGENT CARDS</div>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(180px, 1fr))", gap: 2 }}>
           {agents.map(a => (
             <div key={a.name} style={{
-              background: "#10102a", border: "1px solid rgba(100,140,255,0.08)",
+              background: "#111111", border: "1px solid #1a1a1a",
               padding: "20px 18px", position: "relative", overflow: "hidden",
             }}>
               <div style={{
@@ -363,8 +363,8 @@ function ComponentSection() {
                 </div>
                 <div style={{ width: 8, height: 8, borderRadius: "50%", background: statusColor[a.status], boxShadow: `0 0 8px ${statusColor[a.status]}` }} />
               </div>
-              <div style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 700, fontSize: 15, color: "#e8e8f0" }}>{a.name}</div>
-              <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 11, color: "#7070a0", marginTop: 4 }}>{a.role}</div>
+              <div style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 700, fontSize: 15, color: "#f0f0f0" }}>{a.name}</div>
+              <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 11, color: "#888888", marginTop: 4 }}>{a.role}</div>
             </div>
           ))}
         </div>
@@ -391,13 +391,13 @@ export default function BrandTemplate() {
   }, []);
 
   return (
-    <div style={{ background: "#000", minHeight: "100vh", color: "#e8e8f0", fontFamily: "'Inter', sans-serif", overflowX: "hidden" }}>
+    <div style={{ background: "#000", minHeight: "100vh", color: "#f0f0f0", fontFamily: "'Inter', sans-serif", overflowX: "hidden" }}>
       {/* Header */}
-      <div style={{ borderBottom: "1px solid rgba(100,140,255,0.08)" }}>
+      <div style={{ borderBottom: "1px solid #1a1a1a" }}>
         <GradientBar height={3} glow />
         <div style={{ padding: "32px 48px", display: "flex", alignItems: "flex-end", justifyContent: "space-between", flexWrap: "wrap", gap: 24 }}>
           <div>
-            <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 11, color: "#40406a", letterSpacing: "0.12em", textTransform: "uppercase", marginBottom: 8 }}>
+            <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 11, color: "#444444", letterSpacing: "0.12em", textTransform: "uppercase", marginBottom: 8 }}>
               BlackRoad OS, Inc. · Design System · v2.0
             </div>
             <h1 style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 700, fontSize: 42, margin: 0, letterSpacing: "-0.02em", lineHeight: 1 }}>
@@ -407,7 +407,7 @@ export default function BrandTemplate() {
               </span>
             </h1>
           </div>
-          <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 12, color: "#40406a", textAlign: "right", lineHeight: 2 }}>
+          <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 12, color: "#444444", textAlign: "right", lineHeight: 2 }}>
             <div>6 accents · 8 surfaces · Z:=yx−w</div>
             <div>3 typefaces · 186 repos · 48 domains · 8 agents</div>
           </div>
@@ -415,7 +415,7 @@ export default function BrandTemplate() {
       </div>
 
       {/* Nav */}
-      <div style={{ display: "flex", gap: 0, borderBottom: "1px solid rgba(100,140,255,0.08)", padding: "0 48px" }}>
+      <div style={{ display: "flex", gap: 0, borderBottom: "1px solid #1a1a1a", padding: "0 48px" }}>
         {SECTIONS.map(s => (
           <SectionTab key={s.id} id={s.id} label={s.label} active={active === s.id} onClick={setActive} />
         ))}
